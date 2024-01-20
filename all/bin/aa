@@ -1,0 +1,17 @@
+#!/bin/sh
+
+import activity.sh
+
+_ACTIVITY_DATE_TIME=$(date +%Y/%m.%B/%d/%H.%M.%S)
+_ACTIVITY_FILENAME=$_ACTIVITY_DIRECTORY/$(_time_decade)/$_ACTIVITY_DATE_TIME
+
+mkdir -p $(dirname $_ACTIVITY_FILENAME)
+
+_read_if "Please enter tags separated by PIPE '|' or hit ENTER for none:" _ACTIVITY_TAGS
+
+$EDITOR $_ACTIVITY_FILENAME
+
+git_commit_message="add - $_ACTIVITY_DATE_TIME"
+[ $_ACTIVITY_TAGS ] && git_commit_message="$git_commit_message - $_ACTIVITY_TAGS"
+
+_git_save "$git_commit_message" $_ACTIVITY_FILENAME
