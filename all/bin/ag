@@ -1,7 +1,7 @@
 #!/bin/sh
 _REQUIRED_ARGUMENTS='_ACTIVITY_FILENAME:Activity Filename'
 
-import activity.sh
+import .
 import git:install/file.sh
 
 _FILE_DETAIL_MESSAGE='$_ACTIVITY_DIRECTORY/$_ACTIVITY_FILENAME' _require_file $_ACTIVITY_DIRECTORY/$_ACTIVITY_FILENAME

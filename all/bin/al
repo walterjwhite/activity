@@ -1,5 +1,5 @@
 #!/bin/sh
 
-import activity.sh
+import .
 
 find $_ACTIVITY_DIRECTORY -type f | sed -e "s/^.*.activity\///" | sort -h

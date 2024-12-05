@@ -2,7 +2,7 @@
 
 _ACTIVITY_PROJECT_DIR_ARG=1
 
-import activity.sh
+import .
 
 cd $_ACTIVITY_DIRECTORY || _error "Activity directory does not exist"
 
